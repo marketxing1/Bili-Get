@@ -93,7 +93,7 @@ def dl(durl):
     local=local[0]
     
     #Set tasks for each thread
-    threadnum = 32
+    threadnum = 8
     threading.BoundedSemaphore(threadnum)
     step = total_size // threadnum
     mtd_list = list()
