@@ -13,21 +13,21 @@ Runtime Environment: [Python 3](https://www.python.org/downloads/)
 
 Here's a basic Python script which could download videos from Bilibili.
 
-Run the script and follow steps(Input Video ID, PID and Quality ID).
+Run the script and follow steps(Input Video ID, PID, and Quality ID).
 
 The video will be download with MultiThreads (8 threads as default) (You could change the value of variable 'threadnum' of the function 'dl()' in Bili-Get.py)
 
 ---
 
-API is provided by [KanBilibili](https://kanbilibili.com). A breif introduction to that API is listed below.
+API is provided by [KanBilibili](https://kanbilibili.com). A brief introduction to that API is listed below.
 
-Get basic information of a specific video:
+Get basic information about a specific video:
 
 ```
 GET https://www.kanbilibili.com/api/video/<Video ID>
 ```
 
-This will return a Json Format Documentatin includes title, number of pages, number of favorites, CID and Quality ID etc. 
+This will return a JSON Document includes title, number of pages, number of favorites, CID and Quality ID etc. 
 
 
 Get download link of a specific video:
@@ -35,4 +35,4 @@ Get download link of a specific video:
 GET https://www.kanbilibili.com/api/video/<Video ID>/download?cid=<CID>
 ```
 
-This will return a Json Format Documentatin includes Video Url, format, size and Quality Information etc.
+This will return a JSON Document includes Video Url, format, size and Quality Information etc.
