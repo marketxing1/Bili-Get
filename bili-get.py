@@ -125,11 +125,12 @@ def dl(durl):
         f.close()
 
     print('Download Complete: ' + local)
+    
+url=''
+while url=='':
+    url = input('Input video url or aid: ')
 
-
-url = input('Print video url or aid: ')
-if url == '':
-    url = 'https://www.bilibili.com/video/av2663796'
+    
 aid = re.findall('.*av([0-9]+)', url)
 aid = aid[0]
 url = 'https://www.kanbilibili.com/api/video/' + aid
@@ -161,7 +162,7 @@ if info['err'] == None:
     print('-----------------------------------')
 
     # Parse Page List
-    pid = input('Print video pid: ')
+    pid = input('Input video pid: ')
     if pid == '':
         pid = '1'
     pid = int(pid) - 1
@@ -176,7 +177,7 @@ if info['err'] == None:
     url = url + '/download?cid=' + str(cid)
     req = request.Request(url)
     req.add_header('User-Agent',
-                   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36')
+                   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36')
     f = request.urlopen(req)
     dlinfo = f.read().decode()
 
@@ -200,7 +201,7 @@ if info['err'] == None:
     url = url + '&quality=' + q
     req = request.Request(url)
     req.add_header('User-Agent',
-                   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36')
+                   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36')
     f = request.urlopen(req)
     dlinfo = f.read().decode()
     dlinfo = json.loads(dlinfo)
